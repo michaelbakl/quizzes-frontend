@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Button from "./components/Button/button";
 
 function App() {
   return (
@@ -17,6 +18,11 @@ function App() {
         >
           Learn React
         </a>
+        <Button className='button' onClick={() => { alert('First button clicked!')}}>Click me to open an alert</Button>
+        <Button className='button' onClick={() => { alert('Second button clicked!')}} disabled >
+          Click me to open an alert
+        </Button>
+        <Button className='button' active href='test' >Click me to open an alert</Button>
       </header>
     </div>
   );
