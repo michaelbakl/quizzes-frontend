@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Button from "./components/Button/button";
+// eslint-disable-next-line max-len
+// eslint-disable-next-line import/no-named-as-default,import/no-named-as-default-member,no-unused-vars
+import Button from './components/Button/button';
 
 function App() {
   return (
-    // eslint-disable-next-line react/react-in-jsx-scope
     <div className="App">
       {/* eslint-disable-next-line react/react-in-jsx-scope */}
       <header className="App-header">
@@ -26,11 +27,13 @@ function App() {
         </a>
         {/* eslint-disable-next-line react/react-in-jsx-scope */}
         <Button className='button' onClick={() => {
-          alert('First button clicked!')
+          // eslint-disable-next-line no-alert
+          alert('First button clicked!');
         }}>Click me to open an alert</Button>
         {/* eslint-disable-next-line react/react-in-jsx-scope */}
         <Button className='button' onClick={() => {
-          alert('Second button clicked!')
+          // eslint-disable-next-line no-alert
+          alert('Second button clicked!');
         }} disabled>
           Click me to open an alert
         </Button>
