@@ -21,18 +21,20 @@ const Button = ({
   const classes = classNames(
     'btn',
     className,
-    { active },
+    {active},
   );
 
   const Tag = atrs.href ? 'a' : 'button';
 
   return (
     <Tag
-      { ...atrs }
+      {...atrs}
       className={classes}
       disabled={disabled}
       onClick={onClickAction}
-    >{ children }</Tag>
+    >
+      {children}
+    </Tag>
   );
 };
 
@@ -46,10 +48,10 @@ Button.propTypes = {
 
 Button.defaultProps = {
   children: 'Default button',
-  onClick: () => {},
+  onClick: () => {
+  },
   className: '',
   disabled: false,
 };
-
 
 export default Button;

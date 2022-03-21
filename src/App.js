@@ -35,7 +35,7 @@ function App() {
           Click me to open an alert
         </Button>
         {/* eslint-disable-next-line react/react-in-jsx-scope */}
-        <Button className='button' active href='test'>Click me to open an alert</Button>
+        <Button className='button' active href="test">Click me to open an alert</Button>
       </header>
     </div>
   );
