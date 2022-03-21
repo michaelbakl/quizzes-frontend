@@ -15,7 +15,10 @@
     "plugins": ["prettier"],
     "extends": [
         "airbnb-base",
-        "plugin:react/jsx-runtime"
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:testing-library/react",
+        "plugin:jest/all"
     ],
     "parserOptions": {
         "ecmaVersion": 6,

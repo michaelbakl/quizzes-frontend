@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 
 import PropTypes from 'prop-types';
@@ -5,12 +6,13 @@ import classNames from 'classnames';
 
 import './button.css';
 
-
-const Button = ({
-                  children, onClick, className, disabled, active, ...atrs
-                }) => {
-
-  const onClickAction = e => {
+const Button = (
+  {
+    children, onClick, className, disabled, active, ...atrs
+  }
+) => {
+  /* eslint consistent-return: ["error", { "treatUndefinedAsUnspecified": true }] */
+  const onClickAction = (e) => {
     if (disabled) {
       e.preventDefault();
     } else {
@@ -21,7 +23,7 @@ const Button = ({
   const classes = classNames(
     'btn',
     className,
-    {active},
+    { active },
   );
 
   const Tag = atrs.href ? 'a' : 'button';
