@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 
 import './button.css';
@@ -64,7 +65,9 @@ Button.propTypes = {
   onClick: PropTypes.func,
   className: PropTypes.string,
   disabled: PropTypes.bool,
+  // eslint-disable-next-line react/require-default-props,react/no-unused-prop-types
   active: PropTypes.bool,
+  // eslint-disable-next-line react/require-default-props
   href: PropTypes.string,
 };
 
