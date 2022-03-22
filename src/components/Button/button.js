@@ -2,43 +2,62 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 import './button.css';
 
-const Button = (
-  {
-    children, onClick, className, disabled, active, ...atrs
+class Button extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
-) => {
-  /* eslint consistent-return: ["error", { "treatUndefinedAsUnspecified": true }] */
-  // const onClickAction = (e) => {
-  //   if (disabled) {
-  //     e.preventDefault();
-  //   } else {
-  //     return onClick(e);
-  //   }
-  // };
 
-  const classes = classNames(
-    'btn',
-    className,
-    { active },
-  );
+  render() {
+    const Tag = this.props.href ? 'a' : 'button';
+    return (
+      <Tag
+        className={this.props.className}
+        disabled={this.props.disabled}
+        onClick={this.props.onClick}
+      >
+        {this.props.children}
+      </Tag>
+    );
+  }
+}
 
-  const Tag = atrs.href ? 'a' : 'button';
+// const Button = (
+//   {
+//     children, onClick, className, disabled, active, ...atrs
+//   }
+// ) => {
+/* eslint consistent-return: ["error", { "treatUndefinedAsUnspecified": true }] */
+// const onClickAction = (e) => {
+//   if (disabled) {
+//     e.preventDefault();
+//   } else {
+//     return onClick(e);
+//   }
+// };
 
-  return (
-    <Tag
-      {...atrs}
-      className={classes}
-      disabled={disabled}
-      onClick={onClick}
-    >
-      {children}
-    </Tag>
-  );
-};
+// const classes = classNames(
+//   'btn',
+//   className,
+//   { active },
+// );
+
+// const Tag = atrs.href ? 'a' : 'button';
+//
+// return (
+//   <Tag
+//     {...atrs}
+//     className={classes}
+//     disabled={disabled}
+//     onClick={onClick}
+//   >
+//     {children}
+//   </Tag>
+// );
+// };
 
 Button.propTypes = {
   children: PropTypes.node,
@@ -46,6 +65,7 @@ Button.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   active: PropTypes.bool,
+  href: PropTypes.string,
 };
 
 Button.defaultProps = {
