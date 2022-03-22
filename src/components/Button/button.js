@@ -12,13 +12,13 @@ const Button = (
   }
 ) => {
   /* eslint consistent-return: ["error", { "treatUndefinedAsUnspecified": true }] */
-  const onClickAction = (e) => {
-    if (disabled) {
-      e.preventDefault();
-    } else {
-      return onClick(e);
-    }
-  };
+  // const onClickAction = (e) => {
+  //   if (disabled) {
+  //     e.preventDefault();
+  //   } else {
+  //     return onClick(e);
+  //   }
+  // };
 
   const classes = classNames(
     'btn',
@@ -33,7 +33,7 @@ const Button = (
       {...atrs}
       className={classes}
       disabled={disabled}
-      onClick={onClickAction}
+      onClick={onClick}
     >
       {children}
     </Tag>
