@@ -1,0 +1,42 @@
+.button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #74bbfd;
+    border: none;
+    border-radius: 10px;
+    font-family: Roboto, sans-serif;
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease-out;
+}
+
+.button:active {
+    background-color: #49a7ff;
+}
+
+/*.button:focus {*/
+/*    background-color: aquamarine;*/
+/*    outline: 3px #61dafb solid;*/
+/*}*/
+
+.button:hover {
+    background-color: #49a7ff;
+}
+
+button:disabled,
+button[disabled] {
+    background-color: #bdbdbd;
+}
+
+button:disabled:hover,
+button[disabled]:hover {
+    background-color: #bdbdbd;
+}
+
+
+.answer_button {
+    background-color: #74bbfd;
+}
+
