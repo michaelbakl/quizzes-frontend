@@ -1,109 +1,13 @@
 {
-    "env": {
-        "browser": true,
-        "node": true,
-        "es6": true,
-        "jest": true
-    },
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-        "react",
-        "prettier",
-        "react-hooks"
-    ],
-    "extends": [
-        "airbnb",
-        "plugin:react/recommended"
-    ],
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "sourceType": "module",
-        "requireConfigFile": false,
-        "babelOptions": {
-            "presets": ["@babel/preset-react"]
-        }
-    },
+    "extends": ["stylelint-config-recommended", "stylelint-config-standard"],
     "rules": {
-        "one-var": [
-            "error",
-            "never"
-        ],
-        "react/jsx-uses-vars": "warn",
-        "import/prefer-default-export": "off",
-        "no-unused-vars": ["warn"],
-        "react/no-unused-prop-types": "warn",
-        "react/prefer-stateless-function": 0,
-        "react/button-has-type": 0,
-        "import/extensions": [
-            "warn",
-            "never",
+        "declaration-empty-line-before": [
+            "always",
             {
-                "png": "always"
+                "ignore": ["after-declaration", "first-nested"]
             }
         ],
-        "import/no-extraneous-dependencies": [
-            "error",
-            {
-                "devDependencies": true
-            }
-        ],
-        "react/no-multi-comp": 0,
-        "react/jsx-filename-extension": [
-            1,
-            {
-                "extensions": [
-                    ".js",
-                    ".jsx",
-                    ".ts",
-                    ".tsx"
-                ]
-            }
-        ],
-        "no-console": [
-            "warn",
-            {
-                "allow": [
-                    "warn",
-                    "error"
-                ]
-            }
-        ],
-        "no-debugger": "warn",
-        "no-underscore-dangle": 0,
-        "comma-dangle": "off",
-        "no-param-reassign": "off",
-        "react/destructuring-assignment": 0,
-        "no-plusplus": [
-            "warn",
-            {
-                "allowForLoopAfterthoughts": true
-            }
-        ],
-        "react-hooks/rules-of-hooks": "warn",
-        "react-hooks/exhaustive-deps": "warn",
-        "react/jsx-props-no-spreading": "off",
-        "jsx-a11y/label-has-for": "off",
-        "jsx-a11y/click-events-have-key-events": "off",
-        "jsx-a11y/no-static-element-interactions": "off",
-        "jsx-a11y/label-has-associated-control": "off"
-    },
-    "overrides": [
-        {
-            "files": ["**/*.{ts,tsx}"],
-            "parser": "@typescript-eslint/parser",
-            "plugins": [
-                "react",
-                "prettier",
-                "react-hooks",
-                "@typescript-eslint"
-            ],
-            "globals": {
-                "JSX": true
-            }
-        }
-    ]
+        "comment-whitespace-inside": "never",
+        "selector-class-pattern": null
+    }
 }
-  
