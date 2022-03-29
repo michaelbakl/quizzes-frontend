@@ -1,8 +1,12 @@
+.ant-layout {
+  background-color: white;
+}
+
 .game {
-  background-color: #efefef;
-  margin: 54px 285px 70px;
-  max-width: 1350px;
-  max-height: 820px;
+  background-color: #f2f4ff;
+  margin: 54px 100px 70px;
+  max-width: 2000px;
+  max-height: 900px;
   height: 100%;
   justify-content: space-between;
 }
@@ -15,15 +19,65 @@
   font-family: Roboto, sans-serif;
   font-size: 16px;
   text-transform: uppercase;
-  background-color: #74bbfd;
   width: 120px;
   height: 50px;
   margin-left: 40%;
-  border-radius: 10px;
-  border: none;
-  transition: all 0.3s ease-out;
+  margin-bottom: 50px;
 }
 
 .answer-button:hover {
+  background-color:dodgerblue;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px #000 solid;
+  height: 100px;
+  background-color: #74bbfd;
+}
+
+.header__logo {
+  height: 100px;
+}
+
+.header__info-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header__link {
+  text-decoration: none;
+  font-size: 28px;
+  color: #000;
+  margin-right: 98px;
+}
+
+.header__info-text {
+  font-size: 36px;
+  color: #000;
+}
+
+.header__button:active {
   background-color: #49a7ff;
+}
+
+.header__button:hover {
+  background-color: #49a7ff;
+}
+
+.header__button:disabled,
+.header__button[disabled] {
+  background-color: #bdbdbd;
+}
+
+.header__button:disabled:hover,
+.header__button[disabled]:hover {
+  background-color: #bdbdbd;
+}
+
+.game__radio {
+  margin-top: 100px;
 }

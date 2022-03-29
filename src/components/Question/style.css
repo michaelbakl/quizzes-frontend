@@ -1,0 +1,30 @@
+.question {
+  margin: 100px 80px 127px 150px;
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.question__content {
+  flex-direction: column;
+}
+
+.question__title {
+  font-size: 28px;
+  font-weight: 500;
+  color: #000;
+}
+
+.question__text {
+  font-size: 24px;
+  font-weight: 400;
+  color: #000;
+}
+
+.question__answers {
+  display: flex;
+  flex-direction: row;
+  margin-left: 100px;
+}
