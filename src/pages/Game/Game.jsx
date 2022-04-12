@@ -7,7 +7,7 @@ import './style.css';
 function Game() {
   const question = {
     header: 'Question 1',
-    text: 'KBJDBkajsdbv slkdjvncsldkvc rsljgkfneldv lskjdfnveslkdjfnv ldkfnv efv awkljfnvlskdv slihvkn;svd',
+    text: 'KBJDBkajsdbv slkm k.m  knxc lkvzdnvkl z dv zsdf zf dkjnjnkjn kjnkjnk  kmmk kjml kmn jvncsldkvc rsljgkfneldv lskjdfnveslkdjfnv ldkfnv efv awkljfnvlskdv slihvkn;svd',
     answers: [
       {
         id: 'qwerty123',

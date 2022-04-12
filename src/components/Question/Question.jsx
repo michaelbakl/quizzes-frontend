@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 
@@ -9,9 +9,12 @@ import { useNavigate } from 'react-router';
 function Question(props) {
   const navigate = useNavigate();
 
-  const answers = props.question.answers.map((answer) => (
+  const [answer, setAnswer] = useState(null);
+  const [disabled, setDisabled] = useState(true);
+
+  const answers = props.question.answers.map((item) => (
     // eslint-disable-next-line react/jsx-key
-    <Radio value={answer.id}>{answer.text}</Radio>
+    <Radio value={item.id}>{item.text}</Radio>
   ));
 
   return (
@@ -25,14 +28,13 @@ function Question(props) {
         </p>
       </div>
       <div className="question__answers">
-        <Radio.Group>
+        <Radio.Group className="question__answers__radio" onChange={e => { setAnswer(e.target.value); setDisabled(false); }} value={answer} size="large">
           <Space direction="vertical">
             {answers}
           </Space>
         </Radio.Group>
-        {/* eslint-disable-next-line no-alert */}
-        <Button type="primary" shape="round" className="answer-button" active onClick={() => navigate('/game-finish')}>Answer</Button>
       </div>
+      <Button type="primary" disabled={disabled} shape="round" className="answer-button" active onClick={() => navigate('/game-finish')}>Answer</Button>
     </div>
   );
 }
