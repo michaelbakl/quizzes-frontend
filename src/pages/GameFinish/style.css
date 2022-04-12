@@ -1,0 +1,41 @@
+.game-finish__result-window {
+  margin-top: 5%;
+  width: 80%;
+  height: 50%;
+  background-color: lightyellow;
+  border-radius: 20px;
+  margin-left: 10%;
+}
+
+.result-window__header,
+.result-window__content {
+  padding: 5%;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.result-window__header {
+  padding-bottom: 0;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.game-finish__button {
+  border: none;
+  text-shadow: none;
+  box-shadow: none;
+  color: #49a7ff;
+  margin: 5% 0 5% 40%;
+  padding-top: 5px;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 180px;
+  min-height: 50px;
+  width: 100%;
+  background-color: rgba(35,248,112,0.65);
+  align-items: center;
+  border-radius: 35px;
+  transition: all 0.3s ease-out;
+}

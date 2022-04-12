@@ -1,0 +1,42 @@
+.start-game__rules-window {
+  margin-top: 5%;
+  width: 80%;
+  height: 50%;
+  background-color: lightyellow;
+  border-radius: 20px;
+  margin-left: 10%;
+  box-shadow: 0 5px 20px 10px #defcd9;
+}
+
+.rules-window__header,
+.rules-window__content {
+  padding: 5%;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.rules-window__header {
+  padding-bottom: 0;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.start-game__button {
+  margin: 5% 0 5% 40%;
+  padding-top: 8px;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 180px;
+  min-height: 50px;
+  width: 100%;
+  background-color: rgba(35,248,112,0.65);
+  align-items: center;
+  border-radius: 35px;
+  transition: all 0.3s ease-out;
+}
+
+.start-game__button:hover {
+  box-shadow: 0 15px 15px -10px rgba(93,218,248,0.65);
+}

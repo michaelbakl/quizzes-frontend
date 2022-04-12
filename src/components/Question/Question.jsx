@@ -3,9 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './style.css';
-import { Radio, Space } from 'antd';
+import { Button, Radio, Space } from 'antd';
+import { useNavigate } from 'react-router';
 
 function Question(props) {
+  const navigate = useNavigate();
+
   const answers = props.question.answers.map((answer) => (
     // eslint-disable-next-line react/jsx-key
     <Radio value={answer.id}>{answer.text}</Radio>
@@ -27,6 +30,8 @@ function Question(props) {
             {answers}
           </Space>
         </Radio.Group>
+        {/* eslint-disable-next-line no-alert */}
+        <Button type="primary" shape="round" className="answer-button" active onClick={() => navigate('/game-finish')}>Answer</Button>
       </div>
     </div>
   );
