@@ -8,46 +8,70 @@ import { useNavigate } from 'react-router';
 
 function Question(props) {
   const navigate = useNavigate();
+  const [counter, setCounter] = useState(1);
 
   const [answer, setAnswer] = useState(null);
   const [disabled, setDisabled] = useState(true);
 
-  const answers = props.question.answers.map((item) => (
-    // eslint-disable-next-line react/jsx-key
-    <Radio value={item.id}>{item.text}</Radio>
+  const answers = props.question.answersList.map(item => (
+    <Radio className="answers__answer" name="answer" value={item.answerId} key={item.answerId}>
+      {item.answerText}
+    </Radio>
   ));
+
+  const onClick = () => {
+    setCounter(counter + 1);
+    navigate('/game-finish');
+  };
 
   return (
     <div className="question">
       <div className="question__content">
         <header className="question__title">
-          {props.question.header}
+          {`Question № ${counter}`}
         </header>
         <p className="question__text">
-          {props.question.text}
+          {props.question.questionText}
         </p>
       </div>
       <div className="question__answers">
-        <Radio.Group className="question__answers__radio" onChange={e => { setAnswer(e.target.value); setDisabled(false); }} value={answer} size="large">
+        <Radio.Group
+          className="question__answers__radio"
+          onChange={e => {
+            setAnswer(e.target.value);
+            setDisabled(false);
+          }}
+          value={answer}
+          size="large"
+        >
           <Space direction="vertical">
             {answers}
           </Space>
         </Radio.Group>
       </div>
-      <Button type="primary" disabled={disabled} shape="round" className="answer-button" active onClick={() => navigate('/game-finish')}>Answer</Button>
+      <Button
+        type="primary"
+        disabled={disabled}
+        shape="round"
+        className="answer-button"
+        active
+        onClick={onClick}
+      >
+        Answer
+      </Button>
     </div>
   );
 }
 
 Question.propTypes = {
   question: PropTypes.exact({
-    answers: PropTypes.arrayOf(PropTypes.exact({
-      id: PropTypes.string,
-      text: PropTypes.string,
+    questionId: PropTypes.string,
+    questionText: PropTypes.string,
+    answersList: PropTypes.arrayOf(PropTypes.exact({
+      answerId: PropTypes.string,
+      answerText: PropTypes.string,
     })),
-    header: PropTypes.string,
-    text: PropTypes.string,
-  }).isRequired
+  }).isRequired,
 };
 
 export default Question;

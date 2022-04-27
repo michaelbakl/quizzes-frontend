@@ -1,28 +1,12 @@
 import React from 'react';
+import { shallowEqual, useSelector } from 'react-redux';
 
 import Question from '../../components/Question/Question';
 
 import './style.css';
 
 function Game() {
-  const question = {
-    header: 'Question 1',
-    text: 'KBJDBkajsdbv slkm k.m  knxc lkvzdnvkl z dv zsdf zf dkjnjnkjn kjnkjnk  kmmk kjml kmn jvncsldkvc rsljgkfneldv lskjdfnveslkdjfnv ldkfnv efv awkljfnvlskdv slihvkn;svd',
-    answers: [
-      {
-        id: 'qwerty123',
-        text: 'Nope',
-      },
-      {
-        id: 'qwerty333',
-        text: 'No',
-      },
-      {
-        id: 'qwerty444',
-        text: 'Yeap',
-      },
-    ],
-  };
+  const question = useSelector(state => state.questionReducer.question, shallowEqual);
 
   return (
     <div className="game">
