@@ -1,18 +1,28 @@
-.question {
-  width: 100%;
-  justify-content: flex-start;
-  align-items: center;
-  height: 100%;
+.question-wrapper {
+  margin-top: 5%;
+  width: 80%;
+  height: 50%;
   background-color: lightyellow;
   border-radius: 20px;
+  margin-left: 10%;
   box-shadow: 0 5px 20px 10px #defcd9;
+}
+
+.question-block {
+  display: flex;
+  align-items: center;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  padding: 10%;
 }
 
 .question__content {
   max-width: 65%;
   float: left;
   flex-direction: row;
-  margin: 5%;
+  margin-right: 10%;
 }
 
 .question__title {
@@ -29,8 +39,6 @@
 
 .question__answers {
   float: right;
-  margin-top: 10%;
-  margin-right: 5%;
   font-family: Roboto, sans-serif;
 }
 

@@ -16,7 +16,7 @@ const GameStart = () => {
   const rules = useSelector(state => state.rulesReducer.rules.rules);
 
   const onClick = () => {
-    dispatch(getQuestion());
+    dispatch(getQuestion(1));
     navigate('/game');
   };
 

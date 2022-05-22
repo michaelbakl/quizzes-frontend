@@ -1,0 +1,22 @@
+{
+  "questionId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "questionText": "3+3?",
+  "answersList": [
+    {
+      "answerId": "190ad016-393b-42b6-acg19-c59bsg319bdb84",
+      "answerText": "6"
+    },
+    {
+      "answerId": "68341b95-7d04-4675-a2rg60-8rgad4d003fb82",
+      "answerText": "18"
+    },
+    {
+      "answerId": "b93e1d2b-8257-44cf-a1dsrgc9-0de8argc5d572e5",
+      "answerText": "-5"
+    },
+    {
+      "answerId": "b93e1d2b-8257-44cf-a1afgc9-0de8tnc5d5725e",
+      "answerText": "No right answer"
+    }
+  ]
+}
