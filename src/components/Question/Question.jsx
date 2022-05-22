@@ -3,20 +3,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './style.css';
+import { Radio, Space } from 'antd';
 
 function Question(props) {
   const answers = props.question.answers.map((answer) => (
-    <>
-      <input className="answer-input" type="radio" name="answers" value={answer.id} id={answer.id} />
-      <label className="answer-label" key={answer.id} htmlFor={answer.id}>
-        {answer.text}
-      </label>
-    </>
+    // eslint-disable-next-line react/jsx-key
+    <Radio value={answer.id}>{answer.text}</Radio>
   ));
 
   return (
-    <>
-      <div className="question">
+    <div className="question">
+      <div className="question__content">
         <header className="question__title">
           {props.question.header}
         </header>
@@ -24,10 +21,14 @@ function Question(props) {
           {props.question.text}
         </p>
       </div>
-      <form className="answers">
-        {answers}
-      </form>
-    </>
+      <div className="question__answers">
+        <Radio.Group>
+          <Space direction="vertical">
+            {answers}
+          </Space>
+        </Radio.Group>
+      </div>
+    </div>
   );
 }
 

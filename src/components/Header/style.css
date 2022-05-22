@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px #000 solid;
+  background-color: blue;
+}
+
+.header__logo {
+  margin-top: -100px;
+}

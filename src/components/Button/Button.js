@@ -29,10 +29,9 @@ Button.propTypes = {
   children: PropTypes.node,
   onClick: PropTypes.func,
   className: PropTypes.string,
-  disabled: PropTypes.bool,
-  // eslint-disable-next-line react/require-default-props,react/no-unused-prop-types
-  active: PropTypes.bool,
-  // eslint-disable-next-line react/require-default-props
+  // eslint-disable-next-line max-len
+  disabled: PropTypes.bool, // eslint-disable-next-line react/require-default-props,react/no-unused-prop-types
+  active: PropTypes.bool, // eslint-disable-next-line react/require-default-props
   href: PropTypes.string,
 };
 
