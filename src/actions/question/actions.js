@@ -1,17 +1,21 @@
-import { GET_QUESTION_ERROR, GET_QUESTION_FETCH, GET_QUESTION_SUCCESS } from './actionTypes';
+import {
+  GET_QUESTION_ERROR,
+  GET_QUESTION_FETCH,
+  GET_QUESTION_SUCCESS
+} from './actionTypes';
+import { rawGetResponse } from '../../fetcher/fetcher';
 
-export const getQuestion = (questionId) => dispatch => {
+export const getQuestion = (roomId, questionId) => dispatch => {
   dispatch({ type: GET_QUESTION_FETCH });
-  const str = `/question_${questionId}.json`;
-  // eslint-disable-next-line no-console
-  console.log(str);
-  fetch(str).then(response => response.json()).then(data => {
-    dispatch({
-      type: GET_QUESTION_SUCCESS,
-      question: data,
+  rawGetResponse(`/rooms/${roomId}/game/question/${questionId}`)
+    .then(response => response.json())
+    .then(data => {
+      dispatch({
+        type: GET_QUESTION_SUCCESS,
+        question: data,
+      });
+    }).catch(error => {
+      dispatch({ type: GET_QUESTION_ERROR });
+      console.error(error);
     });
-  }).catch(error => {
-    dispatch({ type: GET_QUESTION_ERROR });
-    console.error(error);
-  });
 };

@@ -1,0 +1,15 @@
+.submit-button {
+  max-width: 300px;
+  width: 100%;
+  margin-top: 7%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding-top: 8px;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  min-height: 50px;
+  align-items: center;
+  transition: all 0.3s ease-out;
+}

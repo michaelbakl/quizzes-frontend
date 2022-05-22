@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from 'antd';
 import { useNavigate } from 'react-router';
 
 import './style.css';
+import { useSelector } from 'react-redux';
 
 const GameFinish = () => {
   const navigate = useNavigate();
+  const isAuthorized = useSelector(state => state.authReducer.state);
+
+  useEffect(() => {
+    if (!isAuthorized) {
+      navigate('/signin');
+    }
+  }, [isAuthorized, navigate]);
+
   return (
     <div>
       <div>

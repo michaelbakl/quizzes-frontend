@@ -1,4 +1,5 @@
 import { GET_RULES } from './actionTypes';
+import { rawGetResponse } from '../../fetcher/fetcher';
 
 export const getRulesAction = (rules) => ({
   type: GET_RULES,
@@ -6,7 +7,7 @@ export const getRulesAction = (rules) => ({
 });
 
 export const getRules = () => dispatch => {
-  fetch('/rules.json').then(response => response.json()).then(data => {
+  rawGetResponse('/rules').then(response => response.json()).then(data => {
     dispatch({
       type: GET_RULES,
       rules: data,

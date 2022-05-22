@@ -1,0 +1,68 @@
+.rooms-menu {
+  margin-top: 5%;
+  width: 80%;
+  height: 50%;
+  background-color: lightyellow;
+  border-radius: 20px;
+  margin-left: 10%;
+  box-shadow: 0 5px 20px 10px #defcd9;
+}
+
+.rooms-menu__header,
+.rooms-menu__content {
+  padding: 5%;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.rooms-menu__header {
+  padding-bottom: 0;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.rooms-menu__content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.rooms-menu__content__item {
+  max-width: 150px;
+  width: 100%;
+  min-height: 50px;
+  text-align: center;
+  align-items: center;
+  padding-top: 7px;
+  border: 2px solid #49a7ff;
+  border-radius: 15px;
+  margin: 15px;
+}
+
+.rooms-menu__content__item:hover {
+  cursor: pointer;
+}
+
+.start-game__button {
+  margin: 5% 0 5% 40%;
+  padding-top: 8px;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 180px;
+  min-height: 50px;
+  border: none;
+  width: 100%;
+  background-color: rgb(35 248 112 / 65%);
+  align-items: center;
+  border-radius: 35px;
+  transition: all 0.3s ease-out;
+}
+
+.start-game__button:hover {
+  background-color: #ffe0b3;
+  box-shadow: 0 15px 15px -10px rgb(93 218 248 / 65%);
+}

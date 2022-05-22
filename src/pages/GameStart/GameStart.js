@@ -5,24 +5,29 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 
 import { Button } from 'antd';
-import { getQuestion } from '../../actions/question/actions';
 import { getRules } from '../../actions/rules/actions';
+import { getRooms } from '../../actions/rooms/actions';
 
 const GameStart = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const isAuthorized = useSelector(state => state.authReducer.state);
+  const questionId = useSelector(state => state.questionReducer.question.questionId);
 
   // eslint-disable-next-line no-shadow
   const rules = useSelector(state => state.rulesReducer.rules.rules);
 
   const onClick = () => {
-    dispatch(getQuestion(1));
+    dispatch(getRooms());
     navigate('/game');
   };
 
   useEffect(() => {
+    // if (!isAuthorized) {
+    //   navigate('/signin');
+    // }
     dispatch(getRules());
-  }, [dispatch]);
+  }, [dispatch, rules]);
 
   return (
     <div>

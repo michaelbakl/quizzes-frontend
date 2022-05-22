@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button, Modal } from 'antd';
 
 import './style.css';
+import { getRules } from '../../actions/rules/actions';
 
 const ModalWindow = () => {
+  const dispatch = useDispatch();
   const [visible, setVisible] = useState(false);
-  const rules = useSelector(state => state.rulesReducer.rules.rules);
+  const rules = useSelector(state => state.rulesReducer.rules);
   const showModalWindow = () => {
     setVisible(true);
   };
   const closeModal = () => {
     setVisible(false);
   };
+  useEffect(() => {
+    dispatch(getRules());
+  }, [dispatch, rules]);
 
   return (
     <>
