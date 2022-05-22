@@ -1,14 +1,18 @@
 .question {
-  margin: 100px 80px 127px 150px;
-  display: flex;
-  flex-direction: row;
-  width: 90%;
+  width: 100%;
   justify-content: flex-start;
   align-items: center;
+  height: 100%;
+  background-color: lightyellow;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px 10px #defcd9;
 }
 
 .question__content {
-  flex-direction: column;
+  max-width: 65%;
+  float: left;
+  flex-direction: row;
+  margin: 5%;
 }
 
 .question__title {
@@ -24,7 +28,21 @@
 }
 
 .question__answers {
-  display: flex;
-  flex-direction: row;
-  margin-left: 100px;
+  float: right;
+  margin-top: 10%;
+  margin-right: 5%;
+  font-family: Roboto, sans-serif;
+}
+
+.question__answers__radio {
+  font-size: 20px;
+}
+
+.ant-radio-wrapper {
+  font-size: 25px;
+}
+
+.ant-radio-inner {
+  width: 25px;
+  height: 25px;
 }

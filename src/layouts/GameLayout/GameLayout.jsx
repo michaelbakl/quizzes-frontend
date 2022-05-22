@@ -1,6 +1,5 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import PropTypes from 'prop-types';
+import { Outlet } from 'react-router-dom';
 
 import './style.css';
 
@@ -11,7 +10,7 @@ const {
   Header, Content
 } = Layout;
 
-function GameLayout(props) {
+function GameLayout() {
   return (
     <Layout>
       <Header className="header">
@@ -22,20 +21,12 @@ function GameLayout(props) {
         </div>
       </Header>
       <Layout>
-        <Content>
-          {props.children}
-          {/* eslint-disable-next-line react/prop-types */}
-          {props.radio}
-          {/* eslint-disable-next-line react/prop-types */}
-          {props.button}
+        <Content className="game-layout">
+          <Outlet />
         </Content>
       </Layout>
     </Layout>
   );
 }
-
-GameLayout.propTypes = {
-  children: PropTypes.element.isRequired,
-};
 
 export default GameLayout;
