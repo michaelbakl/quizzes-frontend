@@ -30,13 +30,15 @@
   text-transform: uppercase;
   max-width: 180px;
   min-height: 50px;
+  border: none;
   width: 100%;
-  background-color: rgba(35,248,112,0.65);
+  background-color: rgb(35 248 112 / 65%);
   align-items: center;
   border-radius: 35px;
   transition: all 0.3s ease-out;
 }
 
 .start-game__button:hover {
-  box-shadow: 0 15px 15px -10px rgba(93,218,248,0.65);
+  background-color: #ffe0b3;
+  box-shadow: 0 15px 15px -10px rgb(93 218 248 / 65%);
 }

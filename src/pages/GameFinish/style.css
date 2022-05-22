@@ -35,7 +35,7 @@
   max-width: 180px;
   min-height: 50px;
   width: 100%;
-  background-color: rgba(35,248,112,0.65);
+  background-color: rgb(35 248 112 / 65%);
   align-items: center;
   border-radius: 35px;
   transition: all 0.3s ease-out;

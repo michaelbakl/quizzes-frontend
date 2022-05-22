@@ -1,16 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
 import './style.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
+
+import { Button } from 'antd';
+import { getQuestion } from '../../actions/question/actions';
+import { getRules } from '../../actions/rules/actions';
 
 const GameStart = () => {
-  const [rules, setRules] = useState('Rules');
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  // eslint-disable-next-line no-shadow
+  const rules = useSelector(state => state.rulesReducer.rules.rules);
+
+  const onClick = () => {
+    dispatch(getQuestion());
+    navigate('/game');
+  };
 
   useEffect(() => {
-    fetch('/data.json').then(response => response.json()).then(data => setRules(data.rules)).catch(() => {
-      setRules('Rules');
-    });
-  }, []);
+    dispatch(getRules());
+  }, [dispatch]);
 
   return (
     <div>
@@ -20,10 +32,9 @@ const GameStart = () => {
           {rules}
         </div>
       </div>
-      <div className="start-game__button">
-        <Link to="/game">Game start</Link>
-      </div>
+      <Button className="start-game__button" type="primary" shape="round" onClick={onClick}>Start game</Button>
     </div>
   );
 };
+
 export default GameStart;
