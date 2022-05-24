@@ -38,22 +38,24 @@ function Question(props) {
     </div>
   ));
 
-  const MAX = 3;
+  const MAX = props.questionsCount;
 
   const onClickAnswer = () => {
     setDisabledRadios(true);
     setDisabledNext(false);
+    console.log(`Click answer: ${props.roomId}, ${questionId}, ${answer}`);
     dispatch(answerQuestion(props.roomId, questionId, answer));
     setSelected(true);
   };
 
   const onClickNext = () => {
+    console.log(answerResponse);
     setDisabledAnswer(true);
     setDisabledNext(true);
     setDisabledRadios(false);
     setSelected(false);
-    setCounter(counter + 1);
-    if (counter < MAX) {
+    setCounter(props.questionNumber);
+    if (counter < MAX && !Object.is('', answerResponse.questionId)) {
       dispatch(getQuestion(props.roomId, answerResponse.questionId));
     } else {
       navigate('/game-finish');
@@ -73,13 +75,17 @@ function Question(props) {
 
   const makeGreen = () => {
     const elemText = document.getElementsByClassName('ant-radio-wrapper-checked')[0];
-    elemText.style.color = 'green';
+    if (elemText != null) {
+      elemText.style.color = 'green';
+    }
   };
 
   const disableRadios = () => {
     const elemRadios = document.getElementsByClassName('ant-radio-input');
-    for (let i = 0; i < elemRadios.length; i++) {
-      elemRadios[i].disabled = true;
+    if (elemRadios != null) {
+      for (let i = 0; i < elemRadios.length; i++) {
+        elemRadios[i].disabled = true;
+      }
     }
   };
 
@@ -95,7 +101,8 @@ function Question(props) {
     if (Object.is(answer, answerResponse.correctAnswerId)) {
       makeGreen();
     }
-  }, [answer, answerResponse, selected]);
+    setCounter(props.questionNumber);
+  }, [answer, answerResponse, makeRed, props.questionNumber, selected]);
 
   return (
     <div>
@@ -126,26 +133,29 @@ function Question(props) {
           </div>
         </div>
       </div>
-      <Button
-        type="primary"
-        disabled={disabledAnswer}
-        shape="round"
-        className="answer-button"
-        id="answer_button_1"
-        onClick={onClickAnswer}
-      >
-        Answer
-      </Button>
-      <Button
-        type="primary"
-        disabled={disabledNext}
-        shape="round"
-        className="answer-button"
-        id="answer_button_2"
-        onClick={onClickNext}
-      >
-        Next
-      </Button>
+      {!selected ? (
+        <Button
+          type="primary"
+          disabled={disabledAnswer}
+          shape="round"
+          className="answer-button"
+          id="answer_button_1"
+          onClick={onClickAnswer}
+        >
+          Answer
+        </Button>
+      ) : (
+        <Button
+          type="primary"
+          disabled={disabledNext}
+          shape="round"
+          className="answer-button"
+          id="answer_button_2"
+          onClick={onClickNext}
+        >
+          Next
+        </Button>
+      )}
     </div>
   );
 }
@@ -162,6 +172,10 @@ Question.propTypes = {
   }).isRequired,
   // eslint-disable-next-line react/require-default-props
   roomId: PropTypes.string,
+  // eslint-disable-next-line react/require-default-props
+  questionsCount: PropTypes.number,
+  // eslint-disable-next-line react/require-default-props
+  questionNumber: PropTypes.number,
 };
 
 export default Question;

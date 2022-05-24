@@ -1,7 +1,7 @@
 export const rawGetResponse = (path) => fetch(`http://7quizzes.local/api${path}`, {
   method: 'GET',
   headers: {
-    Authorization: `Bearer ${localStorage.getItem('Token')}`
+    Authorization: `Bearer ${sessionStorage.getItem('Token')}`
   },
 });
 
@@ -9,7 +9,7 @@ export const rawPostWithBody = (path, body) => fetch(`http://7quizzes.local/api$
   method: 'POST',
   headers: {
     'Content-Type': 'application/json;charset=utf-8',
-    Authorization: `Bearer ${localStorage.getItem('Token')}`
+    Authorization: `Bearer ${sessionStorage.getItem('Token')}`
   },
   body: JSON.stringify(body)
 });
@@ -18,7 +18,7 @@ export const rawPostResponse = (path) => fetch(`http://7quizzes.local/api${path}
   method: 'POST',
   headers: {
     'Content-Type': 'application/json;charset=utf-8',
-    Authorization: `Bearer ${localStorage.getItem('Token')}`
+    Authorization: `Bearer ${sessionStorage.getItem('Token')}`
   },
 });
 

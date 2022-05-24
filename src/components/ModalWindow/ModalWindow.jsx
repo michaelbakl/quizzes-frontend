@@ -8,7 +8,7 @@ import { getRules } from '../../actions/rules/actions';
 const ModalWindow = () => {
   const dispatch = useDispatch();
   const [visible, setVisible] = useState(false);
-  const rules = useSelector(state => state.rulesReducer.rules);
+  const rules = useSelector(state => state.rulesReducer.rules.rules);
   const showModalWindow = () => {
     setVisible(true);
   };

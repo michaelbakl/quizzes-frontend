@@ -5,38 +5,38 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 
 import { Button } from 'antd';
-import { getRules } from '../../actions/rules/actions';
 import { getRooms } from '../../actions/rooms/actions';
+import { getWhoami } from '../../actions/whoami/actions';
 
-const GameStart = () => {
+const Whoami = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isAuthorized = useSelector(state => state.authReducer.authState);
-  const rules = useSelector(state => state.rulesReducer.rules.rules);
+  const whoamiInfo = useSelector(state => state.whoamiReducer.whoami);
 
   const onClick = () => {
     dispatch(getRooms());
-    navigate('/game');
+    navigate('/rooms');
   };
 
   useEffect(() => {
     if (!isAuthorized) {
       navigate('/signin');
     }
-    dispatch(getRules());
-  }, [dispatch, isAuthorized, navigate, rules]);
+    dispatch(getWhoami());
+  }, [dispatch, isAuthorized, navigate]);
 
   return (
     <div>
-      <div className="start-game__rules-window rules-window">
-        <h1 className="rules-window__header">Rules</h1>
-        <div className="rules-window__content">
-          {rules}
+      <div className="whoami-window">
+        <h1 className="whoami__header">Your info</h1>
+        <div className="whoami-window__content">
+          {whoamiInfo.email}
         </div>
       </div>
-      <Button className="start-game__button" type="primary" shape="round" onClick={onClick}>Start game</Button>
+      <Button className="whoami__button" type="primary" shape="round" onClick={onClick}>Check rooms</Button>
     </div>
   );
 };
 
-export default GameStart;
+export default Whoami;

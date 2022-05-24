@@ -4,8 +4,8 @@ const initialState = {
   answerResponse: {
     correctAnswerId: '',
     questionId: '',
-    totalScore: -1,
-    questionScore: -1,
+    totalScore: 0,
+    questionScore: 0,
   }
 };
 

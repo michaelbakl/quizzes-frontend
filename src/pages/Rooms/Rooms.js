@@ -16,12 +16,8 @@ const Rooms = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const rooms = useSelector(state => state.roomsReducer.rooms);
-
+  const isAuthorized = useSelector(state => state.authReducer.authState);
   const startGameRes = useSelector(state => state.gameReducer.game);
-
-  const onClick = () => {
-    navigate('/game');
-  };
 
   const onClickRoom = (roomId) => {
     currentRoomId = roomId;
@@ -52,6 +48,9 @@ const Rooms = () => {
   };
 
   useEffect(() => {
+    if (!isAuthorized) {
+      navigate('/signin');
+    }
     dispatch(getRooms());
   }, [dispatch, startGameRes, rooms]);
 

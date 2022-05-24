@@ -14,7 +14,7 @@ const SignIn = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const isAuthorized = useSelector(state => state.authReducer.state);
+  const isAuthorized = useSelector(state => state.authReducer.authState);
 
   const validateLogin = (login) => {
     const allLetters = /^[a-zA-Z]+$/;

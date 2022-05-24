@@ -7,7 +7,8 @@ import { useSelector } from 'react-redux';
 
 const GameFinish = () => {
   const navigate = useNavigate();
-  const isAuthorized = useSelector(state => state.authReducer.state);
+  const isAuthorized = useSelector(state => state.authReducer.authState);
+  const answerResponse = useSelector(state => state.answerReducer.answerResponse);
 
   useEffect(() => {
     if (!isAuthorized) {
@@ -21,8 +22,7 @@ const GameFinish = () => {
         <div className="game-finish__result-window result-window">
           <h1 className="result-window__header">Results</h1>
           <div className="result-window__content">
-            Your total: 10 points
-            Record: 10 points
+            {`Your total: ${answerResponse.totalScore} points`}
           </div>
         </div>
         <Button
