@@ -32,3 +32,9 @@
   font-size: 20px;
   color: #000;
 }
+
+.head__logout {
+  margin-left: 20px;
+  font-size: 40px;
+  cursor: pointer;
+}

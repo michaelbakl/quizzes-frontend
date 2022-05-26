@@ -1,5 +1,24 @@
-.ant-layout {
-  background-color: #fff;
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.form-window__page__header-logo {
+  margin-top: -30px;
+  width: 430px;
 }
 
 .form-window__page__header {
@@ -46,4 +65,14 @@
 
 .form-window__page__password-input {
   margin-top: 20px;
+}
+
+.form-window__signup-redirect {
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.form-window__signup-redirect:hover {
+  color: #49a7ff;
 }

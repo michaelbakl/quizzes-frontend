@@ -8,6 +8,7 @@ import authReducer from './authReducer';
 import roomReducer from './roomReducer';
 import answerReducer from './answerReducer';
 import whoamiReducer from './whoamiReducer';
+import errorReducer from './errorReducer';
 
 const rootReducer = combineReducers({
   authReducer,
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
   gameReducer,
   questionReducer,
   answerReducer,
-  whoamiReducer
+  whoamiReducer,
+  errorReducer
 });
 
 export default rootReducer;

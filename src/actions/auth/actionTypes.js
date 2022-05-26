@@ -1,3 +1,6 @@
 export const SIGNIN_FETCH = 'SIGNIN_FETCH';
 export const SIGNIN_SUCCESS = 'SIGNIN_SUCCESS';
 export const SIGNIN_FAIL = 'SIGNIN_FAIL';
+export const SIGNUP_FETCH = 'SIGNUP_FETCH';
+export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
+export const SIGNUP_FAIL = 'SIGNUP_FAIL';

@@ -52,7 +52,7 @@ const Rooms = () => {
       navigate('/signin');
     }
     dispatch(getRooms());
-  }, [dispatch, startGameRes, rooms]);
+  }, [dispatch, startGameRes, rooms, isAuthorized, navigate]);
 
   return (
     <div>
@@ -83,7 +83,8 @@ const Rooms = () => {
               No rooms!
             </div>
           )}
-        <Button type="primary" shape="round" onClick={addRoom}>Add room</Button>
+        <Button className="start-game_add-new-room-button" type="primary" shape="round" onClick={addRoom}>Add room</Button>
+        <div className="start-game_temp">a</div>
       </div>
       <Button className="start-game__button" type="primary" shape="round" onClick={onClickStart}>Start game</Button>
     </div>

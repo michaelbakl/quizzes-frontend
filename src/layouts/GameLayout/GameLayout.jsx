@@ -4,8 +4,10 @@ import { Outlet } from 'react-router-dom';
 import './style.css';
 
 import { Layout } from 'antd';
+import { LogoutOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
-import logo from '../../components/Header/img/image.png';
+import { useNavigate } from 'react-router';
+import logo from '../../components/Header/img/logo4.png';
 import ModalWindow from '../../components/ModalWindow/ModalWindow';
 
 const {
@@ -13,7 +15,16 @@ const {
 } = Layout;
 
 function GameLayout() {
+  const navigate = useNavigate();
   const answerResponse = useSelector(state => state.answerReducer.answerResponse);
+
+  const onClickLogout = () => {
+    localStorage.clear();
+    sessionStorage.clear();
+    window.location.reload();
+    navigate('/signin');
+  };
+
   return (
     <Layout>
       <Header className="header">
@@ -23,6 +34,7 @@ function GameLayout() {
           <div className="header__info-text-wrap">
             <span className="header__info-text">{`Score ${answerResponse.totalScore}`}</span>
           </div>
+          <LogoutOutlined className="head__logout" onClick={onClickLogout} />
         </div>
       </Header>
       <Layout>

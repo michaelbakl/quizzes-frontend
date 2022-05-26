@@ -46,8 +46,30 @@
   cursor: pointer;
 }
 
+.start-game_add-new-room-button {
+  max-width: 170px;
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+  background-color: #71d6ff;
+  border: none;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+.start-game_add-new-room-button:hover {
+  background-color: #71c4ff;
+}
+
+.start-game_temp {
+  opacity: 0;
+}
+
 .start-game__button {
-  margin: 5% 0 5% 40%;
+  margin: 30px auto;
+  display: block;
   padding-top: 8px;
   font-size: 20px;
   text-align: center;

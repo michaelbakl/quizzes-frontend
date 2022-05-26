@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router';
 
 import { Button } from 'antd';
 import { getRules } from '../../actions/rules/actions';
-import { getRooms } from '../../actions/rooms/actions';
 
 const GameStart = () => {
   const dispatch = useDispatch();
@@ -15,7 +14,6 @@ const GameStart = () => {
   const rules = useSelector(state => state.rulesReducer.rules.rules);
 
   const onClick = () => {
-    dispatch(getRooms());
     navigate('/game');
   };
 

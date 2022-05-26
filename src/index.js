@@ -18,6 +18,7 @@ import store from './store/store';
 import BasicLayout from './layouts/BasicLayout/BasicLayout';
 import Rooms from './pages/Rooms/Rooms';
 import SignIn from './pages/SignIn/SignIn';
+import SignUp from './pages/SignUp/SignUp';
 import Whoami from './pages/Whoami/Whoami';
 
 ReactDOM.render(
@@ -25,6 +26,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/" element={<Navigate replace to="/signin" />} />
         <Route path="/" element={<BasicLayout />}>
           <Route path="/rooms" element={<Rooms />} />

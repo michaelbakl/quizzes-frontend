@@ -19,8 +19,6 @@ function Game() {
     if (!isAuthorized) {
       navigate('/signin');
     }
-    console.log('GameInfo: ');
-    console.log(gameInfo);
     dispatch(getGameInfo(room.roomId));
   }, [dispatch, isAuthorized, navigate, room.roomId, gameInfo]);
 

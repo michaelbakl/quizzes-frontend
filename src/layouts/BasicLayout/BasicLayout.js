@@ -5,7 +5,8 @@ import './style.css';
 
 import { Button, Layout } from 'antd';
 import { useNavigate } from 'react-router';
-import logo from '../../components/Header/img/image.png';
+import { LogoutOutlined } from '@ant-design/icons';
+import logo from '../../components/Header/img/logo4.png';
 
 const {
   Header, Content
@@ -17,6 +18,13 @@ function BasicLayout() {
     navigate('/whoami');
   };
 
+  const onClickLogout = () => {
+    localStorage.clear();
+    sessionStorage.clear();
+    window.location.reload();
+    navigate('/signin');
+  };
+
   return (
     <Layout>
       <Header className="header">
@@ -24,6 +32,7 @@ function BasicLayout() {
         <div className="header__info-block">
           <div className="header__whoami-wrap">
             <Button type="primary" onClick={onClick}>Who am i?</Button>
+            <LogoutOutlined className="head__logout" onClick={onClickLogout} />
           </div>
         </div>
       </Header>
