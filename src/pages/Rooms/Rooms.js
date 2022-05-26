@@ -52,7 +52,7 @@ const Rooms = () => {
       navigate('/signin');
     }
     dispatch(getRooms());
-  }, [dispatch, startGameRes, rooms]);
+  }, [dispatch, startGameRes, rooms, isAuthorized, navigate]);
 
   return (
     <div>

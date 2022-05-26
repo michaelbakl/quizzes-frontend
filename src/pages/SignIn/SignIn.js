@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
-import { Button, Form, Input } from 'antd';
+import { Form, Input } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 
 import './style.css';
@@ -16,15 +16,15 @@ const SignIn = () => {
 
   const isAuthorized = useSelector(state => state.authReducer.authState);
 
-  const validateLogin = (login) => {
-    const allLetters = /^[a-zA-Z]+$/;
-    return allLetters.test(login);
-  };
-
-  const validatePassword = (password) => {
-    const re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-    return re.test(password);
-  };
+  // const validateLogin = (login) => {
+  //   const allLetters = /^[a-zA-Z]+$/;
+  //   return allLetters.test(login);
+  // };
+  //
+  // const validatePassword = (password) => {
+  //   const re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+  //   return re.test(password);
+  // };
 
   const onFinish = (event) => {
     dispatch(signin(event.username, event.password));
@@ -35,10 +35,6 @@ const SignIn = () => {
   const onFinishFailed = (errorInfo) => {
     // eslint-disable-next-line no-console
     console.log('Failed:', errorInfo);
-  };
-
-  const onClick = () => {
-    navigate('/rooms');
   };
 
   useEffect(() => {

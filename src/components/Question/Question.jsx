@@ -16,7 +16,7 @@ function Question(props) {
 
   const [answer, setAnswer] = useState(null);
   const [disabledAnswer, setDisabledAnswer] = useState(true);
-  const [disabledRadios, setDisabledRadios] = useState(false);
+  const [, setDisabledRadios] = useState(false);
   const [disabledNext, setDisabledNext] = useState(true);
   const [selected, setSelected] = useState(false);
 
@@ -43,13 +43,11 @@ function Question(props) {
   const onClickAnswer = () => {
     setDisabledRadios(true);
     setDisabledNext(false);
-    console.log(`Click answer: ${props.roomId}, ${questionId}, ${answer}`);
     dispatch(answerQuestion(props.roomId, questionId, answer));
     setSelected(true);
   };
 
   const onClickNext = () => {
-    console.log(answerResponse);
     setDisabledAnswer(true);
     setDisabledNext(true);
     setDisabledRadios(false);
@@ -62,6 +60,7 @@ function Question(props) {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const makeRed = () => {
     const elemText = document.getElementsByClassName('ant-radio-wrapper-checked')[0];
     if (elemText != null) {

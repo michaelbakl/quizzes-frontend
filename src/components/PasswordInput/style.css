@@ -7,7 +7,7 @@
 .input-window {
   padding: 2px;
   margin-top: 10px;
-  border: 2px solid #33cccc;
+  border: 2px solid #3cc;
   border-radius: 3px;
 }
 
@@ -38,7 +38,7 @@
   outline: none;
   width: 100%;
   font-size: 16px;
-  line-height: 1.42857;
+  line-height: 1.4286;
   border: none;
   font-family: Roboto, sans-serif;
 }
@@ -57,9 +57,9 @@
 }
 
 .input-window__password-input__eye {
-  background-image: url('./images/eye.svg');
+  background-image: url("./images/eye.svg");
 }
 
 .input-window__password-input__no-eye {
-  background-image: url('./images/no_eye.svg');
+  background-image: url("./images/no_eye.svg");
 }
