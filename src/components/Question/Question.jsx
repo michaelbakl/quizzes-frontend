@@ -60,6 +60,7 @@ function Question(props) {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const makeRed = () => {
     const elemText = document.getElementsByClassName('ant-radio-wrapper-checked')[0];
     if (elemText != null) {
