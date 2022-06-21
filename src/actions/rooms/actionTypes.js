@@ -1,0 +1,10 @@
+export const GET_ROOMS_FETCH = 'GET_ROOMS_FETCH';
+export const GET_ROOMS_SUCCESS = 'GET_ROOMS_SUCCESS';
+export const GET_ROOMS_ERROR = 'GET_ROOMS_ERROR';
+export const GET_ROOM_SUCCESS = 'GET_ROOM_SUCCESS';
+export const GET_ROOM_ERROR = 'GET_ROOM_ERROR';
+export const ADD_ROOM = 'ADD_ROOM';
+export const REMOVE_ROOM = 'REMOVE_ROOM';
+export const JOIN_ROOM_FETCH = 'JOIN_ROOM_FETCH';
+export const JOIN_ROOM_SUCCESS = 'JOIN_ROOM_SUCCESS';
+export const JOIN_ROOM_ERROR = 'JOIN_ROOM_ERROR';

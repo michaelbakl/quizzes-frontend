@@ -11,3 +11,23 @@
   margin-top: 5%;
   border-radius: 7px;
 }
+
+.header__info-block {
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.header__whoami-wrap {
+  max-width: 500px;
+  width: 100%;
+}
+
+.header__whoami {
+  font-size: 20px;
+  color: #000;
+}

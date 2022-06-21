@@ -1,0 +1,65 @@
+.password-window {
+  max-width: 300px;
+  width: 100%;
+  margin: auto;
+}
+
+.input-window {
+  padding: 2px;
+  margin-top: 10px;
+  border: 2px solid #3cc;
+  border-radius: 3px;
+}
+
+.input-window,
+.input-window__eye-button {
+  display: flex;
+}
+
+.input-window__container {
+  padding: 3px;
+  align-items: center;
+  cursor: text;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 100%;
+  justify-content: space-between;
+  max-width: 100%;
+  transition: background-color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;
+  vertical-align: top;
+}
+
+.input-window__password-input {
+  background-color: transparent;
+  box-sizing: border-box;
+  color: inherit;
+  cursor: inherit;
+  min-width: 0;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.4286;
+  border: none;
+  font-family: Roboto, sans-serif;
+}
+
+.input-window__eye-button {
+  width: 15%;
+}
+
+.input-window__password-input__eye,
+.input-window__password-input__no-eye {
+  border: none;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 10%;
+  background-color: #fff;
+}
+
+.input-window__password-input__eye {
+  background-image: url("./images/eye.svg");
+}
+
+.input-window__password-input__no-eye {
+  background-image: url("./images/no_eye.svg");
+}

@@ -1,0 +1,44 @@
+.whoami-window {
+  margin-top: 5%;
+  width: 80%;
+  height: 50%;
+  background-color: lightyellow;
+  border-radius: 20px;
+  margin-left: 10%;
+  box-shadow: 0 5px 20px 10px #defcd9;
+}
+
+.whoami__header,
+.whoami-window__content {
+  padding: 5%;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.whoami__header {
+  padding-bottom: 0;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.whoami__button {
+  margin: 5% 0 5% 40%;
+  padding-top: 8px;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 180px;
+  min-height: 50px;
+  border: none;
+  width: 100%;
+  background-color: rgb(35 248 112 / 65%);
+  align-items: center;
+  border-radius: 35px;
+  transition: all 0.3s ease-out;
+}
+
+.whoami__button:hover {
+  background-color: #ffe0b3;
+  box-shadow: 0 15px 15px -10px rgb(93 218 248 / 65%);
+}

@@ -1,0 +1,49 @@
+.ant-layout {
+  background-color: #fff;
+}
+
+.form-window__page__header {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.form-window__page__header-logo {
+  font-size: 30px;
+  font-family: Roboto, sans-serif;
+}
+
+.form-window__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 24px;
+  max-width: 500px;
+  width: 100%;
+  padding: 32px 40px;
+  background: rgb(255 255 255);
+  border-radius: 3px;
+  box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
+  box-sizing: border-box;
+  color: rgb(94 108 132);
+}
+
+.welcome {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 16px;
+  color: rgb(93 109 131);
+  font-size: 16px;
+}
+
+.form-window__page__login-input,
+.form-window__page__password-input {
+  max-width: 300px;
+  width: 100%;
+  margin: 10px auto;
+}
+
+.form-window__page__password-input {
+  margin-top: 20px;
+}

@@ -2,6 +2,8 @@ import { GET_QUESTION_SUCCESS } from '../actions/question/actionTypes';
 
 const initialState = {
   question: {
+    questionId: '',
+    questionText: '',
     answersList: [],
   }
 };

@@ -1,0 +1,12 @@
+[
+  {
+    "roomId": "FirstRoom",
+    "roomName": "Room 1",
+    "ownerId": "owner1"
+  },
+  {
+    "roomId": "SecondRoom",
+    "roomName": "Room 2",
+    "ownerId": "owner2"
+  }
+]
