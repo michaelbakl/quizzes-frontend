@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 
 import {
   message, Form, Input
-} from 'antd'
+} from 'antd';
 
 import FormItem from 'antd/lib/form/FormItem';
 
