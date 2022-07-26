@@ -11,6 +11,7 @@
 # production
 /build
 /.idea
+/*/*.xml
 
 # misc
 .DS_Store
