@@ -3,20 +3,20 @@ import { Outlet } from 'react-router-dom';
 
 import './style.css';
 
-import { Layout } from 'antd';
-import { LogoutOutlined } from '@ant-design/icons';
-import { useSelector } from 'react-redux';
+import { Button, Layout } from 'antd';
 import { useNavigate } from 'react-router';
+import { LogoutOutlined } from '@ant-design/icons';
 import logo from '../../components/Header/img/logo4.png';
-import ModalWindow from '../../components/ModalWindow/ModalWindow';
 
 const {
   Header, Content
 } = Layout;
 
-function GameLayout() {
+function BasicLayout() {
   const navigate = useNavigate();
-  const answerResponse = useSelector(state => state.answerReducer.answerResponse);
+  const onClick = () => {
+    navigate('/whoami');
+  };
 
   const onClickLogout = () => {
     localStorage.clear();
@@ -30,15 +30,14 @@ function GameLayout() {
       <Header className="header">
         <img className="header__logo" src={logo} alt="logo" />
         <div className="header__info-block">
-          <ModalWindow className="header__modal-window" />
-          <div className="header__info-text-wrap">
-            <span className="header__info-text">{`Score ${answerResponse.totalScore}`}</span>
+          <div className="header__whoami-wrap">
+            <Button type="primary" onClick={onClick}>Who am i?</Button>
+            <LogoutOutlined className="head__logout" onClick={onClickLogout} />
           </div>
-          <LogoutOutlined className="head__logout" onClick={onClickLogout} />
         </div>
       </Header>
       <Layout>
-        <Content className="game-layout">
+        <Content className="basic-layout">
           <Outlet />
         </Content>
       </Layout>
@@ -46,4 +45,4 @@ function GameLayout() {
   );
 }
 
-export default GameLayout;
+export default BasicLayout;

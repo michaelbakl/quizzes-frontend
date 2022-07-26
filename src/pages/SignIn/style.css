@@ -1,0 +1,78 @@
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.form-window__page__header-logo {
+  margin-top: -30px;
+  width: 430px;
+  font-size: 30px;
+  font-family: Roboto, sans-serif;
+}
+
+.form-window__page__header {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.form-window__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 24px;
+  max-width: 500px;
+  width: 100%;
+  padding: 32px 40px;
+  background: rgb(255 255 255);
+  border-radius: 3px;
+  box-shadow: rgb(0 0 0 / 10%) 0 0 10px;
+  box-sizing: border-box;
+  color: rgb(94 108 132);
+}
+
+.welcome {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 16px;
+  color: rgb(93 109 131);
+  font-size: 20px;
+}
+
+.form-window__page__login-input,
+.form-window__page__password-input {
+  max-width: 300px;
+  width: 100%;
+  margin: 10px auto;
+}
+
+.form-window__page__password-input {
+  margin-top: 20px;
+}
+
+.form-window__signup-redirect {
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  font-size: 16px;
+}
+
+.form-window__signup-redirect:hover {
+  color: #49a7ff;
+}

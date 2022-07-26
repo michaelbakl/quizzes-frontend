@@ -1,50 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
-import GameLayout from '../../layouts/GameLayout/GameLayout';
-import Question from '../../componets/Question/Question';
+import Question from '../../components/Question/Question';
 
 import './style.css';
-import Button from '../../componets/Button/Button';
+import { getGameInfo } from '../../actions/game/actions';
 
 function Game() {
-  const question = {
-    header: 'Question 1',
-    text: 'this.props.text',
-    answers: [
-      {
-        id: 'qwerty123',
-        text: 'Nope',
-      },
-      {
-        id: 'qwerty333',
-        text: 'No',
-      },
-      {
-        id: 'qwerty444',
-        text: 'Yeap',
-      },
-    ],
-  };
+  const dispatch = useDispatch();
+  const question = useSelector(state => state.questionReducer.question, shallowEqual);
+  const room = useSelector(state => state.roomReducer.room);
+  const navigate = useNavigate();
+  const isAuthorized = useSelector(state => state.authReducer.authState);
+  const gameInfo = useSelector(state => state.gameReducer.game);
+
+  useEffect(() => {
+    if (!isAuthorized) {
+      navigate('/signin');
+    }
+    dispatch(getGameInfo(room.roomId));
+  }, [dispatch, isAuthorized, navigate, room.roomId, gameInfo]);
 
   return (
-    <GameLayout>
-      <div className="game">
-        <div className="game__question"><Question question={question} /></div>
-        {/* eslint-disable-next-line no-alert */}
-        <Button className="answer-button" active onClick={() => alert('Answer accepted!')}>Answer</Button>
+    <div className="game">
+      <div className="game__question">
+        <Question
+          question={question}
+          roomId={room.roomId}
+          questionsCount={gameInfo.questionsCount}
+          questionNumber={gameInfo.questionNumber}
+        />
       </div>
-    </GameLayout>
+    </div>
   );
 }
-
-// function Game() {
-//   return (
-//     <GameLayout>
-//       <div className="game">
-//         <Question question={question} />
-//       </div>
-//     </GameLayout>
-//   );
-// }
 
 export default Game;

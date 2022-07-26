@@ -5,10 +5,9 @@
         "es6": true,
         "jest": true
     },
-    "parser": "@typescript-eslint/parser",
+    "parser": "@babel/eslint-parser",
     "plugins": [
         "react",
-        "prettier",
         "react-hooks"
     ],
     "extends": [
@@ -44,12 +43,6 @@
                 "png": "always"
             }
         ],
-        "import/no-extraneous-dependencies": [
-            "error",
-            {
-                "devDependencies": true
-            }
-        ],
         "react/no-multi-comp": 0,
         "react/jsx-filename-extension": [
             1,
@@ -82,28 +75,15 @@
                 "allowForLoopAfterthoughts": true
             }
         ],
-        "react-hooks/rules-of-hooks": "warn",
+        "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "react/jsx-props-no-spreading": "off",
         "jsx-a11y/label-has-for": "off",
         "jsx-a11y/click-events-have-key-events": "off",
         "jsx-a11y/no-static-element-interactions": "off",
-        "jsx-a11y/label-has-associated-control": "off"
-    },
-    "overrides": [
-        {
-            "files": ["**/*.{ts,tsx}"],
-            "parser": "@typescript-eslint/parser",
-            "plugins": [
-                "react",
-                "prettier",
-                "react-hooks",
-                "@typescript-eslint"
-            ],
-            "globals": {
-                "JSX": true
-            }
-        }
-    ]
+        "jsx-a11y/label-has-associated-control": "off",
+        "react/function-component-definition": "off",
+        "arrow-parens": "off",
+        "default-param-last": "off"
+    }
 }
-  
