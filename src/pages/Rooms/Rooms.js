@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,19 +9,25 @@ import { getQuestion } from '../../actions/question/actions';
 import { getRooms, joinRoom } from '../../actions/rooms/actions';
 import { getGameInfo, startGame } from '../../actions/game/actions';
 import { createRoom, getRoom } from '../../actions/room/actions';
+import { getWhoami } from '../../actions/whoami/actions';
 
 let currentRoomId;
 
 const Rooms = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [disabledStartGame, setDisabledStartGame] = useState(true);
   const rooms = useSelector(state => state.roomsReducer.rooms);
+  const roomInfo = useSelector(state => state.roomReducer.room);
   const isAuthorized = useSelector(state => state.authReducer.authState);
   const startGameRes = useSelector(state => state.gameReducer.game);
+  const whoamiInfo = useSelector(state => state.whoamiReducer.whoami);
 
   const onClickRoom = (roomId) => {
     currentRoomId = roomId;
     dispatch(getGameInfo(roomId));
+    dispatch(getRoom(roomId));
+    setDisabledStartGame(false);
   };
 
   const addRoom = () => {
@@ -33,9 +39,15 @@ const Rooms = () => {
   const onClickStart = () => {
     dispatch(getRoom(currentRoomId));
     if ('NOT_CREATED'.includes(startGameRes.status)) {
-      dispatch(startGame(currentRoomId));
+      console.log('Not created');
+      if (Object.is(roomInfo.ownerId, whoamiInfo.userId)) {
+        dispatch(startGame(currentRoomId));
+      }
     } else if ('IN_PROCESS'.includes(startGameRes.status)) {
-      dispatch(joinRoom(currentRoomId));
+      console.log('IN PROGRESS');
+      if (!Object.is(roomInfo.ownerId, whoamiInfo.userId)) {
+        dispatch(joinRoom(currentRoomId));
+      }
       dispatch(getQuestion(currentRoomId, startGameRes.questionId));
       navigate('/game-start');
     } else if (startGameRes.questionId.length > 0) {
@@ -47,11 +59,17 @@ const Rooms = () => {
     }
   };
 
+  const onClickCheckedRoom = () => {
+    const elem = document.getElementById(`room_${currentRoomId}`);
+    elem.style.background = 'green';
+  };
+
   useEffect(() => {
     if (!isAuthorized) {
       navigate('/signin');
     }
     dispatch(getRooms());
+    dispatch(getWhoami());
   }, [dispatch, startGameRes, rooms, isAuthorized, navigate]);
 
   return (
@@ -69,8 +87,6 @@ const Rooms = () => {
                 id={`room_${room.roomId}`}
                 onClick={() => {
                   onClickRoom(room.roomId);
-                  const elem = document.getElementById(`room_${room.roomId}`);
-                  elem.style.background = 'green';
                 }}
               >
                 {room.roomName}
@@ -83,10 +99,13 @@ const Rooms = () => {
               No rooms!
             </div>
           )}
-        <Button className="start-game_add-new-room-button" type="primary" shape="round" onClick={addRoom}>Add room</Button>
+        <Button className="start-game_add-new-room-button" type="primary" shape="round" onClick={addRoom}>
+          Add
+          room
+        </Button>
         <div className="start-game_temp">a</div>
       </div>
-      <Button className="start-game__button" type="primary" shape="round" onClick={onClickStart}>Start game</Button>
+      <Button className="start-game__button" type="primary" shape="round" onClick={onClickStart} disabled={disabledStartGame}>Start game</Button>
     </div>
   );
 };

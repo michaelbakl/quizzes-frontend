@@ -26,12 +26,12 @@ function checkStatus(response) {
 export const signin = (email, password) => async dispatch => {
   try {
     dispatch({ type: SIGNIN_FETCH, authState: false });
-    const response = await rawPostSignin('/signin', { email, password }).catch();
+    const response = await rawPostSignin('/signin', { email, password });
     if (!response.ok) {
       checkStatus(response);
     }
     const data = await response.json();
-    sessionStorage.setItem('Token', data.accessToken);
+    localStorage.setItem('Token', data.accessToken);
     return await dispatch({
       type: SIGNIN_SUCCESS,
       authState: true

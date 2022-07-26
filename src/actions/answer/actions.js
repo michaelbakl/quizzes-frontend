@@ -12,6 +12,13 @@ export const answerQuestion = (roomId, questionId, answerId) => dispatch => {
         answerResponse: data,
       }));
   } catch (error) {
-    return dispatch({ type: ANSWER_QUESTION_ERROR });
+    return dispatch({
+      type: ANSWER_QUESTION_ERROR,
+      error: {
+        hasError: true,
+        errorCode: 404,
+        errorMessage: error
+      }
+    });
   }
 };

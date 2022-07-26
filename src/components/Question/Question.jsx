@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import './style.css';
-import { Button, Radio, Space } from 'antd';
+import {
+  Button, Radio, Space, message
+} from 'antd';
 import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getQuestion } from '../../actions/question/actions';
@@ -22,6 +24,7 @@ function Question(props) {
 
   const questionId = useSelector(state => state.questionReducer.question.questionId);
   const answerResponse = useSelector(state => state.answerReducer.answerResponse);
+  let answerResp;
 
   const answers = props.question.answersList.map(item => (
     // eslint-disable-next-line react/jsx-key
@@ -109,7 +112,7 @@ function Question(props) {
         <div className="question-block">
           <div className="question__content">
             <header className="question__title">
-              {`Question № ${counter}`}
+              {`Question № ${counter + 1}`}
             </header>
             <p className="question__text">
               {props.question.questionText}

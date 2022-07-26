@@ -36,6 +36,9 @@ const SignIn = () => {
     const res = dispatch(signin(event.username, event.password));
     let errorCode = 0;
     res.then(data => {
+      if (data == null || data.error == null) {
+        navigate('/rooms');
+      }
       errorCode = data.error.errorCode;
       if (errorCode == null) {
         dispatch(getRooms);
@@ -79,7 +82,7 @@ const SignIn = () => {
                 },
               ]}
             >
-              <Input placeholder="Username" />
+              <Input size="large" placeholder="Username" />
             </FormItem>
             <FormItem
               name="password"
@@ -91,7 +94,7 @@ const SignIn = () => {
                 },
               ]}
             >
-              <Input.Password placeholder="Password" />
+              <Input.Password size="large" placeholder="Password" />
             </FormItem>
             <FormItem>
               <EnterButton text="Enter" />

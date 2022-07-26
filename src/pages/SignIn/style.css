@@ -52,7 +52,7 @@ body {
   text-align: center;
   margin-bottom: 16px;
   color: rgb(93 109 131);
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .form-window__page__login-input,
@@ -70,6 +70,7 @@ body {
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease-out;
+  font-size: 16px;
 }
 
 .form-window__signup-redirect:hover {

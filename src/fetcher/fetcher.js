@@ -1,28 +1,28 @@
-export const rawGetResponse = (path) => fetch(`http://7quizzes.local/api${path}`, {
+export const rawGetResponse = (path) => fetch(`/api${path}`, {
   method: 'GET',
   headers: {
-    Authorization: `Bearer ${sessionStorage.getItem('Token')}`
+    Authorization: `Bearer ${localStorage.getItem('Token')}`
   },
 });
 
-export const rawPostWithBody = (path, body) => fetch(`http://7quizzes.local/api${path}`, {
+export const rawPostWithBody = (path, body) => fetch(`/api${path}`, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json;charset=utf-8',
-    Authorization: `Bearer ${sessionStorage.getItem('Token')}`
+    Authorization: `Bearer ${localStorage.getItem('Token')}`
   },
   body: JSON.stringify(body)
 });
 
-export const rawPostResponse = (path) => fetch(`http://7quizzes.local/api${path}`, {
+export const rawPostResponse = (path) => fetch(`/api${path}`, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json;charset=utf-8',
-    Authorization: `Bearer ${sessionStorage.getItem('Token')}`
+    Authorization: `Bearer ${localStorage.getItem('Token')}`
   },
 });
 
-export const rawPostSignin = (path, body) => fetch(`http://7quizzes.local/api${path}`, {
+export const rawPostSignin = (path, body) => fetch(`/api${path}`, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json;charset=utf-8'

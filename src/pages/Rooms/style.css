@@ -40,10 +40,35 @@
   border: 2px solid #49a7ff;
   border-radius: 15px;
   margin: 15px;
+  /**
+  запрет на выделение текста
+   */
+  /**
+  * Для эксплорера
+  */
+  -ms-user-select: none;
+  /**
+   * Для мозилы
+   */
+  -moz-user-select: none;
+  /**
+   * Для конкверора
+   */
+  -khtml-user-select: none;
+  /**
+   * Для Сафари и Хрома
+   */
+  -webkit-user-select: none;
+   user-select: none;
 }
 
 .rooms-menu__content__item:hover {
   cursor: pointer;
+}
+
+.rooms-menu__content__item:active {
+  background-color: #23d5ab;
+  box-shadow: 0 0 14px 5px rgba(65, 112, 148, 0.19);
 }
 
 .start-game_add-new-room-button {

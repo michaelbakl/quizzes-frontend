@@ -2,6 +2,7 @@ import {
   SIGNIN_FAIL, SIGNUP_FAIL
 } from '../actions/auth/actionTypes';
 import { GET_WHOAMI_ERROR } from '../actions/whoami/actionTypes';
+import { ANSWER_QUESTION_ERROR } from '../actions/answer/actionTypes';
 
 const initialState = {
   error: {
@@ -24,6 +25,11 @@ const errorReducer = (state = initialState, action) => {
         error: action.error,
       };
     case GET_WHOAMI_ERROR:
+      return {
+        ...state,
+        error: action.error,
+      };
+    case ANSWER_QUESTION_ERROR:
       return {
         ...state,
         error: action.error,
