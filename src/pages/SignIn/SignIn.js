@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
+
 import {
   message, Form, Input
-} from 'antd';
+} from 'antd'
+
 import FormItem from 'antd/lib/form/FormItem';
 
 import './style.css';

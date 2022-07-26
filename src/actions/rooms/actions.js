@@ -29,7 +29,7 @@ export const joinRoom = (roomId) => dispatch => {
   dispatch({ type: JOIN_ROOM_FETCH });
   rawPostResponse(`/rooms/${roomId}/join`)
     .then(response => response.json())
-    .then(data => {
+    .then(() => {
       dispatch({
         type: JOIN_ROOM_SUCCESS
       });
